@@ -17,7 +17,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background: var(--bg-gradient);
-    background-image: linear-gradient(rgba(243, 243, 255, 0.8), rgba(230, 230, 250, 0.8)), url('./assets/background.png');
+    background-image: linear-gradient(rgba(243, 243, 255, 0.8), rgba(230, 230, 250, 0.8)), url('./public/assets/background.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -275,14 +275,15 @@ header h1 {
 
 #butterfly-cursor {
     position: absolute;
-    width: 40px;
-    height: 40px;
-    background-image: url('/assets/butterfly.png');
+    width: 60px;
+    height: 60px;
+    background-image: url('./public/assets/butterfly.png');
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
-    z-index: 10;
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+    z-index: 1000;
+    display: none;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity 0.5s ease;

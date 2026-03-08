@@ -46,9 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Load images
         console.log('Loading animation assets...');
         try {
-            const sereneImg = await loadImage('./assets/bhawika_serene.png');
-            const smilingImg = await loadImage('./assets/bhawika_smiling.png');
-            const finalImg = await loadImage('./assets/bhawika.jpg');
+            const sereneImg = await loadImage('./public/assets/bhawika_serene.png');
+            const smilingImg = await loadImage('./public/assets/bhawika_smiling.png');
+            const finalImg = await loadImage('./public/assets/bhawika.jpg');
             console.log('Assets loaded successfully.');
 
             butterfly.classList.add('active');
