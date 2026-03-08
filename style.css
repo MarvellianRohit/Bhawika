@@ -1,0 +1,303 @@
+:root {
+    --lavender: #E6E6FA;
+    --lavender-pale: #F3F3FF;
+    --gold: #D4AF37;
+    --gold-gradient: linear-gradient(45deg, #D4AF37, #F9D976, #B8860B);
+    --text-dark: #333;
+    --text-muted: #666;
+    --bg-gradient: linear-gradient(135deg, #F3F3FF 0%, #E6E6FA 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--bg-gradient);
+    background-image: linear-gradient(rgba(243, 243, 255, 0.8), rgba(230, 230, 250, 0.8)), url('/assets/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-dark);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.gradient-text {
+    background: var(--gold-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    pointer-events: none;
+    padding: 2rem;
+}
+
+.view.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
+}
+
+#landing-page {
+    transform: scale(1.05);
+}
+
+#landing-page.active {
+    transform: scale(1);
+}
+
+#gift-view {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at 20% 30%, rgba(255, 230, 240, 0.8) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(230, 230, 255, 0.8) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, #fdfbfb 0%, #ebedee 100%);
+}
+
+#gift-view.active {
+    display: flex;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Dynamic Background Elements */
+.bg-blobs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.5;
+    animation: floatBlob 20s infinite alternate ease-in-out;
+}
+
+.blob-1 {
+    width: 300px;
+    height: 300px;
+    background: #FFD1FF;
+    top: -50px;
+    left: -50px;
+    animation-duration: 25s;
+}
+
+.blob-2 {
+    width: 400px;
+    height: 400px;
+    background: #E0C3FC;
+    bottom: -100px;
+    right: -50px;
+    animation-duration: 30s;
+    animation-delay: -5s;
+}
+
+.blob-3 {
+    width: 250px;
+    height: 250px;
+    background: #8BC6EC;
+    top: 40%;
+    left: 70%;
+    animation-duration: 22s;
+    animation-delay: -2s;
+}
+
+@keyframes floatBlob {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(50px, 100px) scale(1.2);
+    }
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.glowing-btn {
+    background: var(--gold-gradient);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: pulse 2s infinite;
+}
+
+.glowing-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(212, 175, 55, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+    }
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+    background: var(--gold);
+    color: white;
+}
+
+.image-frame {
+    width: 250px;
+    height: 350px;
+    border: 8px solid white;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    transform: rotate(-3deg);
+    animation: floatImg 4s ease-in-out infinite;
+    transition: transform 0.5s ease;
+}
+
+.image-frame:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.gift-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes floatImg {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+}
+
+.gift-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--gold);
+}
+
+.gift-animation-container {
+    width: 350px;
+    height: 450px;
+    background: var(--lavender-pale);
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.canvas-wrapper {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#portrait-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#butterfly-cursor {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('/assets/butterfly.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 10;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#butterfly-cursor.active {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .custom-message {
+        font-size: 1rem;
+    }
+}

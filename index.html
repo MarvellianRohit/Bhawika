@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy International Women's Day!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="app">
+        <div id="landing-page" class="view active">
+            <header>
+                <h1 class="gradient-text">Happy International Women’s Day<br>to My Favorite Person</h1>
+                <p class="custom-message">Bhawika, they say butterflies are a sign of new beginnings and beautiful
+                    transformations. Ever since you came into my life, everything has felt a little more colorful and a
+                    lot more meaningful. This little site is just a digital snapshot of how much you brighten my
+                    world—not just on International Women's Day, but every single day. Open this gift and let the colors
+                    remind you of how much you mean to me.</p>
+            </header>
+            <main>
+                <button id="open-gift-btn" class="glowing-btn">Open Your Gift</button>
+            </main>
+        </div>
+
+        <div id="gift-view" class="view">
+            <div class="gift-content">
+                <h2 class="gift-header">A Special Surprise for You</h2>
+                <div class="gift-animation-container">
+                    <div class="canvas-wrapper">
+                        <canvas id="portrait-canvas"></canvas>
+                        <div id="butterfly-cursor"></div>
+                    </div>
+                </div>
+                <p class="gift-text">I hope this brings a smile to your face just like you do to mine.</p>
+                <div class="bg-blobs">
+                    <div class="blob blob-1"></div>
+                    <div class="blob blob-2"></div>
+                    <div class="blob blob-3"></div>
+                </div>
+                <button id="back-btn" class="nav-btn">Back</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>
