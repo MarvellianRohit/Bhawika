@@ -17,7 +17,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background: var(--bg-gradient);
-    background-image: linear-gradient(rgba(243, 243, 255, 0.8), rgba(230, 230, 250, 0.8)), url('/assets/background.png');
+    background-image: linear-gradient(rgba(243, 243, 255, 0.8), rgba(230, 230, 250, 0.8)), url('./assets/background.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
